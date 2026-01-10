@@ -30,3 +30,4 @@ jobs:
       # Runs TypeScript type-checking and builds the production bundle using Vite
       - name: Typecheck and build
         run: bun run build
+
