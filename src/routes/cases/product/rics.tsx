@@ -15,8 +15,8 @@ export const Route = createFileRoute({
 
 export const routeData = {
   config: {
-    logo: '/cases/rics/RicsLogo.png',
-    image: '/rics/preview.png',
+    logo: '/cases/rics/RicsLogo.webp',
+    image: '/rics/preview.webp  ',
     startDate: '07.2024',
     endDate: '02.2025',
     scheme: 'light',
@@ -35,9 +35,9 @@ export const routeData = {
       hello: 'Участие в разработке',
       name: 'Июль 2024 - Февраль 2025',
       info1Title: 'Роль',
-      info1Description: 'Product Design',
+      info1Description: 'Продуктовый дизайнер',
       info2Title: 'url',
-      info2Description: 'landing.ricsfix.ru',
+      info2Description: 'ricsfix.ru',
 
       heading: 'О ПРОДУКТЕ',
       textDescription:
@@ -85,7 +85,7 @@ export const routeData = {
       hello: 'Involvement in development',
       name: 'July 2024 - February 2025',
       info1Title: 'Role',
-      info1Description: 'Product Design',
+      info1Description: 'Product designer',
       info2Title: 'url',
       info2Description: 'landing.ricsfix.ru',
 
@@ -139,35 +139,35 @@ function RouteComponent() {
         <AboutCaseInfo title={L.info2Title} description={L.info2Description} url='https://landing.ricsfix.ru' />
       </AboutCase>
 
-      <CaseImage src='/cases/rics/slide1.jpg' noBorder />
+      <CaseImage src='/cases/rics/slide1.webp' noBorder />
 
       <CaseText title={L.heading} description={L.textDescription} noBorder />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/rics/phone-icon.jpg' noBorder />
-        <CaseImage src='/cases/rics/doc-icon.jpg' noBorder />
+        <CaseImage src='/cases/rics/phone-icon.webp' noBorder />
+        <CaseImage src='/cases/rics/doc-icon.webp' noBorder />
       </CaseMedia>
 
       <CaseText title={L.headingAuth} description={L.textDescriptionAuth} noBorder />
 
-      <CaseImage src='/cases/rics/auth-1.jpg' noBorder />
+      <CaseImage src='/cases/rics/auth-1.webp' noBorder />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/rics/auth-2.jpg' noBorder />
-        <CaseImage src='/cases/rics/auth-3.jpg' noBorder />
+        <CaseImage src='/cases/rics/auth-2.webp' noBorder />
+        <CaseImage src='/cases/rics/auth-3.webp' noBorder />
       </CaseMedia>
 
-      <CaseImage src='/cases/rics/auth-4.jpg' noBorder />
+      <CaseImage src='/cases/rics/auth-4.webp' noBorder />
 
       <CaseText title={L.headingOrders} description={L.textDescriptionOrders} noBorder />
 
-      <CaseImage src='/cases/rics/order-1.jpg' noBorder />
+      <CaseImage src='/cases/rics/order-1.webp' noBorder />
 
       <CaseTextImage
         title={L.headingOrder1}
         description={L.textDescriptionOrder1}
         direction='column'
-        src='/cases/rics/order-2.jpg'
+        src='/cases/rics/order-2.webp'
         noImageBorder
         noBorder
         reverse
@@ -177,7 +177,7 @@ function RouteComponent() {
         title={L.headingOrder2}
         description={L.textDescriptionOrder2}
         direction='column'
-        src='/cases/rics/order-3.jpg'
+        src='/cases/rics/order-3.webp'
         noBorder
         noImageBorder
       />
@@ -186,39 +186,39 @@ function RouteComponent() {
         title={L.headingOrder3}
         description={L.textDescriptionOrder3}
         direction='column'
-        src='/cases/rics/order-4.jpg'
+        src='/cases/rics/order-4.webp'
         noBorder
         reverse
         noImageBorder
       />
 
-      <CaseImage src='/cases/rics/order-5.jpg' noBorder />
+      <CaseImage src='/cases/rics/order-5.webp' noBorder />
 
       <CaseText title={L.headingProfile} description={L.textDescriptionProfile} noBorder />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/rics/profile-1.jpg' noBorder />
-        <CaseImage src='/cases/rics/profile-2.jpg' noBorder />
+        <CaseImage src='/cases/rics/profile-1.webp' noBorder />
+        <CaseImage src='/cases/rics/profile-2.webp' noBorder />
       </CaseMedia>
 
-      <CaseImage src='/cases/rics/profile-3.jpg' noBorder />
+      <CaseImage src='/cases/rics/profile-3.webp' noBorder />
 
       <CaseText title={L.headingBranding} description={L.textDescriptionBranding} noBorder />
 
-      <CaseImage src='/cases/rics/branding-1.jpg' noBorder />
+      <CaseImage src='/cases/rics/branding-1.webp' noBorder />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/rics/branding-2.jpg' noBorder />
-        <CaseImage src='/cases/rics/branding-3.jpg' noBorder />
+        <CaseImage src='/cases/rics/branding-2.webp' noBorder />
+        <CaseImage src='/cases/rics/branding-3.webp' noBorder />
       </CaseMedia>
 
-      <CaseImage src='/cases/rics/branding-4.jpg' noBorder />
+      <CaseImage src='/cases/rics/branding-4.webp' noBorder />
 
       <CaseVideo src='/cases/rics/rics-teaser.webm' noBorder />
 
       <CaseText title={L.headingResult} description={L.textDescriptionResult} noBorder />
 
-      <CaseImage src='/cases/rics/result-1.jpg' noBorder />
+      <CaseImage src='/cases/rics/result-1.webp' noBorder />
     </>
   );
 }

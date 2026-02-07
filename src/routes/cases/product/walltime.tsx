@@ -14,8 +14,8 @@ export const Route = createFileRoute({
 
 export const routeData = {
   config: {
-    logo: '/cases/walltime/wt-logo.png',
-    image: '/walltime/preview.jpg',
+    logo: '/cases/walltime/wt-logo.webp',
+    image: '/walltime/preview.webp',
     startDate: '11.2020',
     endDate: '01.2023',
     scheme: 'dark',
@@ -33,9 +33,9 @@ export const routeData = {
       hello: 'Участие в разработке',
       name: 'Ноябрь 2020 - Январь 2023',
       info1Title: 'Роль',
-      info1Description: 'Design Lead, Product Design',
+      info1Description: 'Лид-дизайнер, Продуктовый дизайнер',
       info2Title: 'url',
-      info2Description: 'walltime.ru',
+      info2Description: 'walltime 1.0 в Google Play',
 
       headingProduct: 'О ПРОДУКТЕ',
       textDescriptionProduct:
@@ -104,7 +104,7 @@ export const routeData = {
       info1Title: 'Role',
       info1Description: 'Design Lead, Product Design',
       info2Title: 'url',
-      info2Description: 'walltime.ru',
+      info2Description: 'walltime 1.0 in Google Play',
 
       headingProduct: 'ABOUT THE PRODUCT',
       textDescriptionProduct:
@@ -180,53 +180,53 @@ function RouteComponent() {
         />
       </AboutCase>
 
-      <CaseImage src='/cases/walltime/hello-walltime.jpg' />
+      <CaseImage src='/cases/walltime/hello-walltime.webp' />
 
       <CaseText title={L.headingProduct} description={L.textDescriptionProduct} noBorder />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/walltime/product-1.jpg' />
-        <CaseImage src='/cases/walltime/product-2.jpg' />
+        <CaseImage src='/cases/walltime/product-1.webp' />
+        <CaseImage src='/cases/walltime/product-2.webp' />
       </CaseMedia>
 
-      <CaseImage src='/cases/walltime/product-3.jpg' />
+      <CaseImage src='/cases/walltime/product-3.webp' />
 
       <CaseText title={L.headingOnboarding} description={L.textDescriptionOnbording} noBorder />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/walltime/onboarding-1.jpg' />
-        <CaseImage src='/cases/walltime/onboarding-2.jpg' />
+        <CaseImage src='/cases/walltime/onboarding-1.webp' />
+        <CaseImage src='/cases/walltime/onboarding-2.webp' />
       </CaseMedia>
 
       <CaseText title={L.headingHome} description={L.textDescriptionHome} noBorder />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/walltime/home-1.jpg' />
-        <CaseImage src='/cases/walltime/home-2.jpg' />
+        <CaseImage src='/cases/walltime/home-1.webp' />
+        <CaseImage src='/cases/walltime/home-2.webp' />
       </CaseMedia>
 
       <CaseText title={L.headingMainPage} description={L.textDescriptionMainPage} noBorder />
 
-      <CaseImage src='/cases/walltime/mainpage-1.jpg' />
+      <CaseImage src='/cases/walltime/mainpage-1.webp' />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/walltime/mainpage-2.jpg' />
-        <CaseImage src='/cases/walltime/mainpage-3.jpg' />
+        <CaseImage src='/cases/walltime/mainpage-2.webp' />
+        <CaseImage src='/cases/walltime/mainpage-3.webp' />
       </CaseMedia>
 
       <CaseText title={L.headingMainMyCollection} description={L.textDescriptionMyCollection} noBorder />
 
-      <CaseImage src='/cases/walltime/homepage-1.jpg' />
+      <CaseImage src='/cases/walltime/homepage-1.webp' />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/walltime/homepage-2.jpg' />
-        <CaseImage src='/cases/walltime/homepage-3.jpg' />
+        <CaseImage src='/cases/walltime/homepage-2.webp' />
+        <CaseImage src='/cases/walltime/homepage-3.webp' />
       </CaseMedia>
 
       <CaseMedia layout='row'>
-        <CaseImage src='/cases/walltime/homepage-4.jpg' />
-        <CaseImage src='/cases/walltime/homepage-5.jpg' />
-        <CaseImage src='/cases/walltime/homepage-6.jpg' />
+        <CaseImage src='/cases/walltime/homepage-4.webp' />
+        <CaseImage src='/cases/walltime/homepage-5.webp' />
+        <CaseImage src='/cases/walltime/homepage-6.webp' />
       </CaseMedia>
 
       <CaseText title={L.headingMainSeeCollection} description={L.textDescriptionSeeCollection} noBorder />
@@ -234,76 +234,76 @@ function RouteComponent() {
       <CaseVideo src='/cases/walltime/wlt.webm' />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/walltime/seecollection-1.jpg' />
-        <CaseImage src='/cases/walltime/seecollection-2.jpg' />
+        <CaseImage src='/cases/walltime/seecollection-1.webp' />
+        <CaseImage src='/cases/walltime/seecollection-2.webp' />
       </CaseMedia>
 
       <CaseText title={L.headingMainPublicCollection} description={L.textDescriptionPublicCollection} noBorder />
 
       <CaseMedia layout='row'>
-        <CaseImage src='/cases/walltime/publiccollection-1.jpg' />
-        <CaseImage src='/cases/walltime/publiccollection-2.jpg' />
-        <CaseImage src='/cases/walltime/publiccollection-3.jpg' />
+        <CaseImage src='/cases/walltime/publiccollection-1.webp' />
+        <CaseImage src='/cases/walltime/publiccollection-2.webp' />
+        <CaseImage src='/cases/walltime/publiccollection-3.webp' />
       </CaseMedia>
 
       <CaseText title={L.headingMainSharewall} description={L.textDescriptionSharewall} noBorder />
 
-      <CaseImage src='/cases/walltime/sharewall-1.jpg' />
+      <CaseImage src='/cases/walltime/sharewall-1.webp' />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/walltime/sharewall-2.jpg' />
-        <CaseImage src='/cases/walltime/sharewall-3.jpg' />
+        <CaseImage src='/cases/walltime/sharewall-2.webp' />
+        <CaseImage src='/cases/walltime/sharewall-3.webp' />
       </CaseMedia>
 
-      <CaseImage src='/cases/walltime/sharewall-4.jpg' />
+      <CaseImage src='/cases/walltime/sharewall-4.webp' />
 
       <CaseText title={L.headingMainFeed} description={L.textDescriptionFeed} noBorder />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/walltime/feed-1.jpg' />
-        <CaseImage src='/cases/walltime/feed-2.jpg' />
+        <CaseImage src='/cases/walltime/feed-1.webp' />
+        <CaseImage src='/cases/walltime/feed-2.webp' />
       </CaseMedia>
 
-      <CaseImage src='/cases/walltime/feed-3.jpg' />
+      <CaseImage src='/cases/walltime/feed-3.webp' />
 
       <CaseText title={L.headingMainStore} description={L.textDescriptionStore} noBorder />
 
-      <CaseImage src='/cases/walltime/store-1.jpg' />
+      <CaseImage src='/cases/walltime/store-1.webp' />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/walltime/store-2.jpg' />
-        <CaseImage src='/cases/walltime/store-3.jpg' />
+        <CaseImage src='/cases/walltime/store-2.webp' />
+        <CaseImage src='/cases/walltime/store-3.webp' />
       </CaseMedia>
 
       <CaseText title={L.headingMainProfile} description={L.textDescriptionProfile} noBorder />
 
-      <CaseImage src='/cases/walltime/profile-1.jpg' />
+      <CaseImage src='/cases/walltime/profile-1.webp' />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/walltime/profile-2.jpg' />
-        <CaseImage src='/cases/walltime/profile-3.jpg' />
+        <CaseImage src='/cases/walltime/profile-2.webp' />
+        <CaseImage src='/cases/walltime/profile-3.webp' />
       </CaseMedia>
 
       <CaseText title={L.headingMainSettings} description={L.textDescriptionSettings} noBorder />
 
-      <CaseImage src='/cases/walltime/settings-1.jpg' />
+      <CaseImage src='/cases/walltime/settings-1.webp' />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/walltime/settings-2.jpg' />
-        <CaseImage src='/cases/walltime/settings-3.jpg' />
+        <CaseImage src='/cases/walltime/settings-2.webp' />
+        <CaseImage src='/cases/walltime/settings-3.webp' />
       </CaseMedia>
 
       <CaseText title={L.headingMainPopup} description={L.textDescriptionPopup} noBorder />
 
-      <CaseImage src='/cases/walltime/dialogs-1.jpg' />
+      <CaseImage src='/cases/walltime/dialogs-1.webp' />
 
       <CaseText title={L.headingMainTypo} description={L.textDescriptionTypo} noBorder />
 
-      <CaseImage src='/cases/walltime/typo-1.jpg' />
+      <CaseImage src='/cases/walltime/typo-1.webp' />
 
-      <CaseImage src='/cases/walltime/typo-2.jpg' />
+      <CaseImage src='/cases/walltime/typo-2.webp' />
 
-      <CaseImage src='/cases/walltime/final.jpg' />
+      <CaseImage src='/cases/walltime/final.webp' />
     </>
   );
 }

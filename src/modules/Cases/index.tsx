@@ -67,7 +67,7 @@ export default function Cases() {
             </TabsContent>
           </Tabs>
         </div>
-        <p className='text-base text-white/30'>{L.worksUpdate}: 01.03.2025</p>
+        <p className='text-base text-white/30'>{L.worksUpdate}: 07.02.2026</p>
       </Block>
       <div className='flex flex-col gap-10 max-md:gap-6'>
         {!!firstGridCases.length && (

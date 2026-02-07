@@ -22,10 +22,10 @@ export type TempLightSource = {
 
 const localization = T({
   ru: {
-    description: 'Продуктовый & игровой дизайн',
+    description: 'Продуктовый дизайнер — игры и цифровые сервисы',
   },
   en: {
-    description: 'Product & Game Design',
+    description: 'Product Designer — Games & Digital Products',
   },
 });
 

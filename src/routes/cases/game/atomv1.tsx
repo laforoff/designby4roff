@@ -12,8 +12,8 @@ export const Route = createFileRoute({
 
 export const routeData = {
   config: {
-    logo: '/cases/atom/a-logo.png',
-    image: '/atom/atom-preview.jpg',
+    logo: '/cases/atom/a-logo.webp',
+    image: '/atom/atom-preview.webp',
     startDate: '06.2021',
     endDate: '02.2023',
     scheme: 'dark',
@@ -31,7 +31,7 @@ export const routeData = {
       hello: 'Участие в разработке',
       name: 'Июнь 2021 - Февраль 2023',
       info1Title: 'Роль',
-      info1Description: 'UI/UX Designer',
+      info1Description: 'UI/UX Дизайнер',
       info2Title: 'url',
       info2Description: 'atomrp.ru',
       heading: 'ЗАГОЛОВОК',
@@ -68,93 +68,93 @@ function RouteComponent() {
         <AboutCaseInfo title={L.info2Title} description={L.info2Description} url='https://atomrp.ru' />
       </AboutCase>
 
-      <CaseImage src='/cases/atom/review.jpg' />
+      <CaseImage src='/cases/atom/review.webp' />
 
-      <CaseImage src='/cases/atom/sb-2.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-2.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-3.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-3.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-4.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-4.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-5.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-5.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-6.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-6.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-7.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-7.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-8.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-8.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-9.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-9.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-10.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-10.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-11.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-11.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-12.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-12.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-13.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-13.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-14.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-14.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-15.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-15.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-16.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-16.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-17.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-17.webp' noBorder />
 
       <CaseVideo src='/cases/atom/fr.webm' />
 
-      <CaseImage src='/cases/atom/sb-19.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-19.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-20.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-20.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-21.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-21.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-22.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-22.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-23.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-23.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-24.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-24.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-25.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-25.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-26.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-26.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-27.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-27.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-28.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-28.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-29.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-29.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-30.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-30.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-31.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-31.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-32.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-32.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-33.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-33.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-34.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-34.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-35.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-35.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-36.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-36.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-37.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-37.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-38.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-38.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-39.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-39.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-40.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-40.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-41.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-41.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-42.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-42.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-43.jpg' noBorder />
+      <CaseImage src='/cases/atom/sb-43.webp' noBorder />
 
-      <CaseImage src='/cases/atom/sb-44.jpg' />
+      <CaseImage src='/cases/atom/sb-44.webp' />
     </>
   );
 }

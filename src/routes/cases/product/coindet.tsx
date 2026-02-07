@@ -14,8 +14,8 @@ export const Route = createFileRoute({
 
 export const routeData = {
   config: {
-    logo: '/cases/coindet/coindet-logo.png',
-    image: '/coindet/preview.jpg',
+    logo: '/cases/coindet/coindet-logo.webp',
+    image: '/coindet/preview.webp',
     startDate: '05.2022',
     endDate: '08.2022',
     scheme: 'light',
@@ -33,7 +33,7 @@ export const routeData = {
       hello: 'Участие в разработке',
       name: 'Май 2022 - Август 2022',
       info1Title: 'Роль',
-      info1Description: 'Product Design',
+      info1Description: 'Продуктовый дизайнер',
       heading: 'ЗАГОЛОВОК',
       bigHeading: 'Это отличный крупный заголовок.',
       textDescription:
@@ -60,13 +60,13 @@ export const routeData = {
         'В ходе работы удалось выстроить простой и логичный процесс определения монеты — от съёмки до получения результата. Интерфейс оформлен так, чтобы каждая деталь поддерживала быстрые действия и не перегружала пользователя. Получившийся инструмент демонстрирует, как технологии распознавания могут работать естественно и помогать в решении повседневных задач.',
     },
     en: {
-      caseTitle: 'ATHAYOGA',
-      caseShortDescription: '',
-      caseDescription: 'Case description',
-      hello: 'Hello',
-      name: 'Nikita',
-      info1Title: 'Item 1',
-      info1Description: 'Item 1 description',
+      caseTitle: 'COINDET',
+      caseShortDescription: 'An application that uses trained artificial intelligence, allowing you to find out information and the approximate value of your coin collection.',
+      caseDescription: 'An application that uses trained artificial intelligence, allowing you to find out information and the approximate value of your coin collection.',
+      hello: 'Involvement in development',
+      name: 'May 2022 - August 2022',
+      info1Title: 'Role',
+      info1Description: 'Product designer',
       heading: 'HEADING',
       bigHeading: "It's a great big headline.",
       textDescription:
@@ -105,44 +105,44 @@ function RouteComponent() {
         <AboutCaseInfo title={L.info1Title} description={L.info1Description} />
       </AboutCase>
 
-      <CaseImage src='/cases/coindet/sb-1.jpg' />
+      <CaseImage src='/cases/coindet/sb-1.webp' />
 
       <CaseText title={L.headingProduct} description={L.textDescriptionProduct} noBorder />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/coindet/sb-2.jpg' />
-        <CaseImage src='/cases/coindet/sb-3.jpg' />
+        <CaseImage src='/cases/coindet/sb-2.webp' />
+        <CaseImage src='/cases/coindet/sb-3.webp' />
       </CaseMedia>
 
       <CaseText title={L.headingStructure} description={L.textDescriptionStructure} noBorder />
 
-      <CaseImage src='/cases/coindet/sb-4.jpg'/>
+      <CaseImage src='/cases/coindet/sb-4.webp'/>
 
       <CaseText title={L.headingSearchPhoto} description={L.textDescriptionSearchPhoto} noBorder />
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/coindet/sb-5.jpg' />
-        <CaseImage src='/cases/coindet/sb-6.jpg' />
+        <CaseImage src='/cases/coindet/sb-5.webp' />
+        <CaseImage src='/cases/coindet/sb-6.webp' />
       </CaseMedia>
 
       <CaseMedia layout='gallery'>
-        <CaseImage src='/cases/coindet/sb-7.jpg' />
-        <CaseImage src='/cases/coindet/sb-8.jpg' />
+        <CaseImage src='/cases/coindet/sb-7.webp' />
+        <CaseImage src='/cases/coindet/sb-8.webp' />
       </CaseMedia>
 
       <CaseText title={L.headingCatalog} description={L.textDescriptionCatalog} noBorder />
 
       <CaseMedia layout='row'>
-        <CaseImage src='/cases/coindet/sb-9.jpg' />
-        <CaseImage src='/cases/coindet/sb-10.jpg' />
-        <CaseImage src='/cases/coindet/sb-11.jpg' />
+        <CaseImage src='/cases/coindet/sb-9.webp' />
+        <CaseImage src='/cases/coindet/sb-10.webp' />
+        <CaseImage src='/cases/coindet/sb-11.webp' />
       </CaseMedia>
 
       <CaseVideo src='/cases/coindet/cndt.webm' />
 
       <CaseText title={L.headingResult} description={L.textDescriptionResult} noBorder />
 
-      <CaseImage src='/cases/coindet/sb-12.jpg' />
+      <CaseImage src='/cases/coindet/sb-12.webp' />
     </>
   );
 }
