@@ -33,11 +33,11 @@ export const routeData = {
       hello: 'Участие в разработке',
       name: 'Май 2022 - Август 2022',
       info1Title: 'Роль',
-      info1Description: 'Продуктовый дизайнер',
-      heading: 'ЗАГОЛОВОК',
-      bigHeading: 'Это отличный крупный заголовок.',
+      info1Description: 'Product designer',
+      heading: '-',
+      bigHeading: '-',
       textDescription:
-        'С другой стороны, консультации с широким кругом специалистов требуют определения и уточнения модели развития. Таким образом, укрепление и развитие структуры позволяет широкому кругу (специалистов) участвовать в формировании направлений прогрессивного развития.',
+        '-',
 
       headingProduct: 'О ПРОДУКТЕ',
       textDescriptionProduct:
@@ -67,10 +67,10 @@ export const routeData = {
       name: 'May 2022 - August 2022',
       info1Title: 'Role',
       info1Description: 'Product designer',
-      heading: 'HEADING',
-      bigHeading: "It's a great big headline.",
+      heading: '-',
+      bigHeading: "-",
       textDescription:
-        'On the other hand, consulting with a broad asset requires defining and clarifying a development model. Thus, the strengthening and development of the structure provides a wide range of (specialists) to participate in shaping the directions of progressive development.',
+        '-',
 
       headingProduct: 'ABOUT THE PRODUCT',
       textDescriptionProduct:

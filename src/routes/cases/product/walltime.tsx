@@ -33,7 +33,7 @@ export const routeData = {
       hello: 'Участие в разработке',
       name: 'Ноябрь 2020 - Январь 2023',
       info1Title: 'Роль',
-      info1Description: 'Лид-дизайнер, Продуктовый дизайнер',
+      info1Description: 'Product designer',
       info2Title: 'url',
       info2Description: 'walltime 1.0 в Google Play',
 
@@ -102,7 +102,7 @@ export const routeData = {
       hello: 'Involvement in development',
       name: 'November 2020 - January 2023',
       info1Title: 'Role',
-      info1Description: 'Design Lead, Product Design',
+      info1Description: 'Product Designer',
       info2Title: 'url',
       info2Description: 'walltime 1.0 in Google Play',
 

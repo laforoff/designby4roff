@@ -35,7 +35,7 @@ export const routeData = {
       hello: 'Участие в разработке',
       name: 'Июль 2024 - Февраль 2025',
       info1Title: 'Роль',
-      info1Description: 'Продуктовый дизайнер',
+      info1Description: 'Product designer',
       info2Title: 'url',
       info2Description: 'ricsfix.ru',
 

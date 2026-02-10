@@ -8,33 +8,171 @@ import { getObjectKeys } from '@/utils/getObjectKeys';
 
 const experienceData = {
   config: {
+
     project1: {
       post: 'UI/UX Designer · Product Designer',
-      image: 'freelance.png',
-      startDate: '10.2025',
+      image: 'freelance.webp',
+      startDate: '11.2019',
       endDate: 'now',
     },
+
+    project2: {
+      post: 'Product Designer',
+      image: 'tage.webp',
+      startDate: '11.2024',
+      endDate: 'now',
+    },
+
+    project3: {
+      post: 'UI/UX Designer',
+      image: 'skyrimrp.webp',
+      startDate: '07.2023',
+      endDate: 'now',
+    },
+
+    project4: {
+      post: 'Product Designer',
+      image: 'riks.webp',
+      startDate: '07.2024',
+      endDate: '10.2024',
+    },
+
+    project5: {
+      post: 'Product Designer',
+      image: 'athayoga.webp',
+      startDate: '07.2024',
+      endDate: '10.2024',
+    },
+
+    project6: {
+      post: 'Product Designer',
+      image: 'volnatender.webp',
+      startDate: '07.2024',
+      endDate: '10.2024',
+    },
+
+    project7: {
+      post: 'UI/UX Designer',
+      image: 'atomrp.webp',
+      startDate: '07.2024',
+      endDate: '10.2024',
+    },
+    project8: {
+      post: 'Product Designer',
+      image: 'eddention.webp',
+      startDate: '07.2024',
+      endDate: '10.2024',
+    },
+
   } as Experiences,
   localization: T({
     ru: {
       title: 'Опыт',
       description: 'Или для кого создавались продукты.',
-      andMore: 'И другое',
+      andMore: 'И другие',
+
       project1: {
         title: 'Фриланс',
         description:
           'Проводил исследования, проектировал интерфейсы, сайты и мобильные приложения. Занимался их упаковкой и сопровождал на этапе разработки.',
       },
+
+      project2: {
+        title: 'TAGE',
+        description:
+          'Текст еще не готов, но надо! Текст еще не готов, но надо! Текст еще не готов, но надо! Текст еще не готов, но надо!',
+      },
+
+      project3: {
+        title: 'Skyrim Role Play',
+        description:
+          'Текст еще не готов, но надо! Текст еще не готов, но надо! Текст еще не готов, но надо! Текст еще не готов, но надо!',
+      },
+    
+      project4: {
+        title: 'РИКС',
+        description:
+          'Текст еще не готов, но надо! Текст еще не готов, но надо! Текст еще не готов, но надо! Текст еще не готов, но надо!',
+      },
+
+      project5: {
+        title: 'ATHAYOGA',
+        description:
+          'Текст еще не готов, но надо! Текст еще не готов, но надо! Текст еще не готов, но надо! Текст еще не готов, но надо!',
+      },
+
+      project6: {
+        title: 'Волна',
+        description:
+          'Текст еще не готов, но надо! Текст еще не готов, но надо! Текст еще не готов, но надо! Текст еще не готов, но надо!',
+      },
+
+      project7: {
+        title: 'ATOM Community',
+        description:
+          'Текст еще не готов, но надо! Текст еще не готов, но надо! Текст еще не готов, но надо! Текст еще не готов, но надо!',
+      },    
+      
+      project8: {
+        title: 'eDDention',
+        description:
+          'Текст еще не готов, но надо! Текст еще не готов, но надо! Текст еще не готов, но надо! Текст еще не готов, но надо!',
+      },
+
     },
     en: {
       title: 'Experience',
       description: 'Or who the products were created for.',
       andMore: 'And more',
+
       project1: {
         title: 'Freelance',
         description:
+          'The text is not ready yet, but it is necessary! The text is not ready yet, but it is necessary! The text is not ready yet, but it is necessary! The text is not ready yet, but it is necessary!',
+      },
+
+      project2: {
+        title: 'TAGE',
+        description:
           'Conducted research, designed interfaces, websites, and mobile applications. Handled their packaging and accompanied them during the development phase.',
       },
+
+      project3: {
+        title: 'Skyrim Role Play',
+        description:
+          'Conducted research, designed interfaces, websites, and mobile applications. Handled their packaging and accompanied them during the development phase.',
+      },
+
+      project4: {
+        title: 'РИКС',
+        description:
+          'Conducted research, designed interfaces, websites, and mobile applications. Handled their packaging and accompanied them during the development phase.',
+      },
+
+      project5: {
+        title: 'ATHATOGA',
+        description:
+          'Conducted research, designed interfaces, websites, and mobile applications. Handled their packaging and accompanied them during the development phase.',
+      },
+
+      project6: {
+        title: 'Volna',
+        description:
+          'Conducted research, designed interfaces, websites, and mobile applications. Handled their packaging and accompanied them during the development phase.',
+      },
+
+      project7: {
+        title: 'ATOM Community',
+        description:
+          'Conducted research, designed interfaces, websites, and mobile applications. Handled their packaging and accompanied them during the development phase.',
+      }, 
+
+      project8: {
+        title: 'eDDention Team',
+        description:
+          'Conducted research, designed interfaces, websites, and mobile applications. Handled their packaging and accompanied them during the development phase.',
+      },    
+
     },
   }),
 };
