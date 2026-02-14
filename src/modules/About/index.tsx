@@ -18,7 +18,7 @@ export const localization = T({
     blogButton: 'Веду свой блог в Telegram',
   },
   en: {
-    description: 'I live by design in 2018.',
+    description: 'I have been living with design since 2018.',
     personalInfo:
       'Hi! I am Nikita, a designer who creates intuitive web services, mobile applications, and unique gaming web interfaces. My work is a combination of creativity and technical expertise that allows me to develop products that not only solve business problems, but also give users pleasure from interaction. I currently live in Moscow, Russia.',
     personalInfo2:
