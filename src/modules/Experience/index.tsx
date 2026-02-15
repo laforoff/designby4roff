@@ -184,7 +184,7 @@ const experienceData = {
       project8: {
         title: 'eDDention Team',
         description:
-          'Этот проект с аудиторией более 100 000 пользователей стал для меня первым крупным опытом в игровой сфере и точкой перехода от графического дизайна к созданию пользовательских интерфейсов. Я начал с разработки логотипа, затем создал сайт проекта, позже — UI для игровой части, а со временем обновил первый логотип под новую версию игры и занимался поддержкой и актуализацией оформления сообщества во «ВКонтакте». Работа с большим и активным сообществом дала мне практический опыт взаимодействия с широкой аудиторией, стала важным этапом профессионального роста и расширила круг моих заказчиков.',
+          'Co-founded the eDDention team and contributed to the development of the Android application walltime. Conducted a comprehensive market and competitor analysis at the early stage, identifying limited competition and validating the product opportunity. Designed the interface based on a fully custom design system without relying on external UI libraries, establishing a distinctive visual style and dynamic wallpaper switching experience with personalized collections. Implemented the Sharewall system for sharing collections via QR code and created custom animations in Adobe After Effects, exported as JSON for in-app implementation; later developed a dedicated redesign case study. The app was published on Google Play and achieved a strong user rating.',
       },  
 
       project9: {
