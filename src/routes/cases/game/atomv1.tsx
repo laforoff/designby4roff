@@ -68,7 +68,7 @@ function RouteComponent() {
         <AboutCaseInfo title={L.info2Title} description={L.info2Description} url='https://atomrp.ru' />
       </AboutCase>
 
-      <CaseImage src='/cases/atom/review.webp' />
+      <CaseImage src='/cases/atom/preview.webp' />
 
       <CaseImage src='/cases/atom/sb-2.webp' noBorder />
 

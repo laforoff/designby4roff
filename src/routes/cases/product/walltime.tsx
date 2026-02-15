@@ -25,7 +25,7 @@ export const routeData = {
   } as CaseData,
   localization: T({
     ru: {
-      caseTitle: 'walltime',
+      caseTitle: 'walltime 2.0',
       caseShortDescription:
         'Установите живые обои в формате timelapse и создавайте собственные подборки, меняйте время, делитесь с друзьями и настраивайте экран под себя.',
       caseDescription:

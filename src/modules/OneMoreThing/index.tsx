@@ -27,7 +27,7 @@ const localization = T({
     },
   },
   en: {
-    title: 'And something else',
+    title: 'One More Thing',
     description: 'I also consider it an achievement worth sharing.',
     photoshop: {
       title: `Design of social \nnetworks`,
