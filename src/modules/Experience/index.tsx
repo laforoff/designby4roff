@@ -40,22 +40,22 @@ const experienceData = {
     project5: {
       post: 'Product Designer',
       image: 'athayoga.webp',
-      startDate: '07.2024',
-      endDate: '10.2024',
+      startDate: '11.2022',
+      endDate: '10.2023',
     },
 
     project6: {
       post: 'Product Designer',
       image: 'volnatender.webp',
-      startDate: '05.2021',
-      endDate: '04.2023',
+      startDate: '06.2023',
+      endDate: '10.2023',
     },
 
     project7: {
       post: 'UI/UX Designer',
       image: 'atomrp.webp',
-      startDate: '07.2024',
-      endDate: '10.2024',
+      startDate: '05.2021',
+      endDate: '04.2024',
     },
 
     project8: {
