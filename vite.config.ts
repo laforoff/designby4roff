@@ -21,13 +21,9 @@ export default defineConfig(({ mode }) => {
         autoCodeSplitting: true,
         verboseFileRoutes: false,
       }),
-      react({
-        babel: isProd
-          ? {
-              plugins: [['babel-plugin-react-compiler']],
-            }
-          : undefined,
-      }),
+
+      react(),
+
       tailwindcss(),
     ],
 
@@ -46,9 +42,7 @@ export default defineConfig(({ mode }) => {
           manualChunks(id) {
             if (!id.includes('node_modules')) return;
 
-            if (id.includes('/@tanstack/')) {
-              return 'vendor-tanstack';
-            }
+            if (id.includes('/@tanstack/')) return 'vendor-tanstack';
 
             return 'vendor';
           },
