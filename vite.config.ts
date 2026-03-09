@@ -3,14 +3,18 @@ import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
-// https://vite.dev/config/
 export default defineConfig(({ mode }) => {
+  const isProd = mode === 'production';
+  const isDev = mode === 'development';
+
   return {
     base: '/',
+
     define: {
-      isProd: mode === 'production',
-      isDev: mode === 'development',
+      isProd,
+      isDev,
     },
+
     plugins: [
       tanstackRouter({
         target: 'react',
@@ -18,32 +22,45 @@ export default defineConfig(({ mode }) => {
         verboseFileRoutes: false,
       }),
       react({
-        babel: {
-          plugins: [['babel-plugin-react-compiler']],
-        },
+        babel: isProd
+          ? {
+              plugins: [['babel-plugin-react-compiler']],
+            }
+          : undefined,
       }),
       tailwindcss(),
     ],
+
     build: {
+      target: 'esnext',
+      minify: 'esbuild',
+      cssMinify: 'esbuild',
+      sourcemap: false,
+
       rollupOptions: {
         output: {
           chunkFileNames: 'assets/chunks/[name]-[hash].js',
           entryFileNames: 'assets/[name]-[hash].js',
           assetFileNames: 'assets/[name]-[hash].[ext]',
+
           manualChunks(id) {
             if (!id.includes('node_modules')) return;
-            const p = id.split('node_modules/')[1]?.split('/');
-            if (!p?.length) return;
-            if (p[0] === '.pnpm') return p[1]?.split('+')[0]?.replace(/@/g, '_');
-            return p[0].startsWith('@') && p[1] ? `${p[0]}/${p[1]}` : p[0];
+
+            if (id.includes('/@tanstack/')) {
+              return 'vendor-tanstack';
+            }
+
+            return 'vendor';
           },
         },
       },
     },
+
     server: {
       host: '0.0.0.0',
-      allowedHosts: mode === 'development' || undefined,
+      allowedHosts: isDev ? true : undefined,
     },
+
     resolve: {
       alias: {
         '@': '/src',
