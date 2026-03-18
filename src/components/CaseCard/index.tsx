@@ -93,12 +93,12 @@ export default function CaseCard({
           }}
           src={`/cases/${image}`}
           maxWidth='100%'
-          minHeight={isDesktop ? '37vh' : '67vw'}
         />
         <motion.div
           initial={false}
           className={cn(
-            'absolute bottom-0 flex w-full flex-col gap-7 p-[50px] max-md:gap-4 max-md:bg-[#141414] max-md:p-8 md:pointer-events-none',
+            `bottom-0 flex w-full flex-col gap-7 p-[50px] max-md:gap-4 max-md:bg-[#141414] max-md:p-8 md:pointer-events-none
+            md:absolute`,
             {
               'max-md:bg-white': scheme === 'light' && inCase,
             },
