@@ -30,8 +30,8 @@ function RouteComponent() {
   // displayLocalization заморожена во время перехода — меняется только в onExitComplete
   const [displayLocalization, setDisplayLocalization] = useState<RouteData['localization'] | undefined>(undefined);
 
-  // Флаг первой загрузки: конфиг и локализация применяются сразу, без ожидания exit-анимации
-  const initializedRef = useRef(false);
+  // Ref (не state) — устанавливается синхронно в useLayoutEffect до того, как сработает useEffect
+  const isTransitioningRef = useRef(false);
   // Флаг первого рендера: не стартуем transition при маунте
   const isFirstRenderRef = useRef(true);
 
@@ -45,26 +45,34 @@ function RouteComponent() {
       gap: currentCase.config.gap ?? 64,
     };
 
-    if (!initializedRef.current) {
-      // Первая загрузка — применяем немедленно, transition нет
-      initializedRef.current = true;
-      setCaseOptions(config);
-      setDisplayLocalization(currentCase.localization);
-    } else {
+    if (isTransitioningRef.current) {
       // Навигация — ждём завершения exit-анимации
       pendingConfigRef.current = config;
       pendingLocalizationRef.current = currentCase.localization;
+    } else {
+      // Первая загрузка или нет активной анимации — применяем немедленно
+      setCaseOptions(config);
+      setDisplayLocalization(currentCase.localization);
     }
   }, [currentCase]);
 
   useLayoutEffect(() => {
-    if (pathname === '/') return;
+    if (pathname === '/') {
+      // Сбрасываем флаг даже на главной, чтобы последующий переход в кейс
+      // не воспринимался как «первый рендер» и корректно ставил isTransitioningRef
+      isFirstRenderRef.current = false;
+      return;
+    }
     if (isFirstRenderRef.current) {
-      // Первый рендер: только обновляем категорию, transition не стартуем
+      // Первый рендер на кейсе (прямая загрузка URL): только обновляем категорию,
+      // transition не стартуем — конфиг применяется немедленно без анимации
       isFirstRenderRef.current = false;
       setSelectedCategory(pathname.split('/')[2] as CasesCategory);
       return;
     }
+    // useLayoutEffect выполняется синхронно до useEffect — ref будет установлен
+    // раньше, чем useEffect([currentCase]) успеет прочитать его значение
+    isTransitioningRef.current = true;
     setIsTransitioning(true);
     setSelectedCategory(pathname.split('/')[2] as CasesCategory);
   }, [pathname]);
@@ -90,6 +98,7 @@ function RouteComponent() {
           mode='wait'
           onExitComplete={() => {
             // Сброс скролла + применение нового конфига и локализации в "мёртвой зоне" между exit и enter
+            isTransitioningRef.current = false;
             if (containerRef.current) containerRef.current.scrollTop = 0;
             if (pendingConfigRef.current) {
               setCaseOptions(pendingConfigRef.current);
