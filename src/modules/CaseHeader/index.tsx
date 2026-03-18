@@ -1,10 +1,10 @@
 import Button from '@/components/Button';
 import Icon from '@/components/Icon';
 import Image from '@/components/Image';
-import { useCaseRoutes } from '@/hooks/useCaseRoutes';
 import { useDevice } from '@/hooks/useDevice';
 import { useLocalization } from '@/hooks/useLocalization';
 import { useCasesStore } from '@/stores/cases';
+import { RouteData } from '@/types/RouteData';
 import { cn } from '@/utils/cn';
 import { useNavigate } from '@tanstack/react-router';
 import { motion, Variants } from 'framer-motion';
@@ -12,19 +12,22 @@ import { RefObject, useEffect, useState } from 'react';
 
 type CaseHeaderProps = {
   containerRef: RefObject<HTMLDivElement | null>;
+  localization: RouteData['localization'] | undefined;
 };
 
-export const CaseHeader = ({ containerRef }: CaseHeaderProps) => {
-  const { currentCase } = useCaseRoutes();
+export const CaseHeader = ({ containerRef, localization }: CaseHeaderProps) => {
   const navigate = useNavigate();
   const caseOptions = useCasesStore((state) => state.caseOptions);
+  const setIsTransitioning = useCasesStore((state) => state.setIsTransitioning);
   const { isMobile } = useDevice();
-  const { L } = useLocalization(currentCase?.localization);
+  const { L } = useLocalization(localization);
   const [showBackground, setShowBackground] = useState(false);
   const [showHeaderInfo, setShowHeaderInfo] = useState(false);
 
   const onCloseCase = () => {
-    navigate({ to: '/' });
+    setIsTransitioning(true);
+    setTimeout(() => setIsTransitioning(false), 800);
+    navigate({ to: '/', viewTransition: true });
   };
 
   useEffect(() => {

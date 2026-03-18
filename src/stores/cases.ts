@@ -6,11 +6,13 @@ export interface CaseOptions extends Pick<CaseData, 'background' | 'borderColor'
 type CasesStates = {
   selectedCategory: CasesCategory;
   caseOptions: CaseOptions;
+  isTransitioning: boolean;
 };
 
 type CasesActions = {
   setSelectedCategory: (category: CasesCategory) => void;
   setCaseOptions: (options: Partial<CaseOptions>) => void;
+  setIsTransitioning: (value: boolean) => void;
 };
 
 const initialCaseOptions: CaseOptions = { background: '#000', scheme: 'dark', logo: '/cases/exampleLogo.png', gap: 64 };
@@ -21,6 +23,8 @@ export const useCasesStore = createCustomStore({
 })<CasesStates & CasesActions>((set) => ({
   selectedCategory: 'product',
   caseOptions: initialCaseOptions,
+  isTransitioning: false,
   setSelectedCategory: (selectedCategory) => set({ selectedCategory }),
   setCaseOptions: (options) => set(({ caseOptions: caseOption }) => ({ caseOptions: { ...caseOption, ...options } })),
+  setIsTransitioning: (value) => set({ isTransitioning: value }),
 }));

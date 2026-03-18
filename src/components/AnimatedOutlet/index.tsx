@@ -1,6 +1,7 @@
 import { Outlet } from '@tanstack/react-router';
 import { easeInOut, motion, useIsPresent, type MotionProps } from 'framer-motion';
 import { forwardRef, useRef } from 'react';
+import { useCasesStore } from '@/stores/cases';
 
 type AnimatedOutletProps = Omit<MotionProps, 'children'>;
 
@@ -8,6 +9,7 @@ const TRANSITION = { bounce: 0, duration: 0.7, ease: easeInOut } as const;
 
 const AnimatedOutlet = forwardRef<HTMLDivElement, AnimatedOutletProps>((props, ref) => {
   const isPresent = useIsPresent();
+  const background = useCasesStore((state) => state.caseOptions.background);
 
   // Замораживаем JSX пока элемент присутствует
   // Когда isPresent станет false — показываем последний живой снапшот
@@ -25,6 +27,7 @@ const AnimatedOutlet = forwardRef<HTMLDivElement, AnimatedOutletProps>((props, r
       exit={{ y: '100%' }} // ← ЭТО было главной проблемой
       transition={TRANSITION}
       style={{
+        background,
         pointerEvents: isPresent ? 'auto' : 'none',
         ...props.style,
       }}

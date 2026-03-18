@@ -1,5 +1,5 @@
 import { cn } from '@/utils/cn';
-import { AnimatePresence, HTMLMotionProps, motion, Variants } from 'framer-motion';
+import { HTMLMotionProps, motion, Variants } from 'framer-motion';
 import { Children, HTMLAttributes, PropsWithChildren, ReactElement } from 'react';
 
 interface TabsProps extends HTMLMotionProps<'div'> {
@@ -48,21 +48,20 @@ export const TabsContent = ({ customId, children, className }: PropsWithChildren
 
     return (
       <div className={cn('relative flex h-[60px] items-center', className)}>
-        <AnimatePresence>
-          {isActiveChild && (
-            <motion.div
-              layoutId={`active-tab-${customId}`}
-              className='black absolute inset-1.5 rounded-full bg-white'
-              style={{ width: childSize, height: childSize }}
-              transition={{ duration: 0.2, ease: 'circOut' }}
-            />
-          )}
-        </AnimatePresence>
+        {isActiveChild && (
+          <motion.div
+            layoutId={`active-tab-${customId}`}
+            className='black absolute inset-1.5 rounded-full bg-white'
+            style={{ width: childSize, height: childSize }}
+            transition={{ duration: 0.2, ease: 'circOut' }}
+          />
+        )}
         {child}
       </div>
     );
   });
 };
+
 export const TabsTab = ({ active, children, className, ...props }: TabsTabProps) => {
   return (
     <div

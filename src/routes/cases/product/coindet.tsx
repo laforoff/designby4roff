@@ -36,8 +36,7 @@ export const routeData = {
       info1Description: 'Product designer',
       heading: '-',
       bigHeading: '-',
-      textDescription:
-        '-',
+      textDescription: '-',
 
       headingProduct: 'О ПРОДУКТЕ',
       textDescriptionProduct:
@@ -61,16 +60,17 @@ export const routeData = {
     },
     en: {
       caseTitle: 'COINDET',
-      caseShortDescription: 'An application that uses trained artificial intelligence, allowing you to find out information and the approximate value of your coin collection.',
-      caseDescription: 'An application that uses trained artificial intelligence, allowing you to find out information and the approximate value of your coin collection.',
+      caseShortDescription:
+        'An application that uses trained artificial intelligence, allowing you to find out information and the approximate value of your coin collection.',
+      caseDescription:
+        'An application that uses trained artificial intelligence, allowing you to find out information and the approximate value of your coin collection.',
       hello: 'Involvement in development',
       name: 'May 2022 - August 2022',
       info1Title: 'Role',
       info1Description: 'Product designer',
       heading: '-',
-      bigHeading: "-",
-      textDescription:
-        '-',
+      bigHeading: '-',
+      textDescription: '-',
 
       headingProduct: 'ABOUT THE PRODUCT',
       textDescriptionProduct:
@@ -116,7 +116,7 @@ function RouteComponent() {
 
       <CaseText title={L.headingStructure} description={L.textDescriptionStructure} noBorder />
 
-      <CaseImage src='/cases/coindet/sb-4.webp'/>
+      <CaseImage src='/cases/coindet/sb-4.webp' />
 
       <CaseText title={L.headingSearchPhoto} description={L.textDescriptionSearchPhoto} noBorder />
 

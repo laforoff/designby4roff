@@ -41,8 +41,6 @@ export default function Cases() {
   const firstGridCases = useMemo(() => categoryCases.filter((_, index) => index < secondGroupIndex), [categoryCases]);
   const secondGridCases = useMemo(() => categoryCases.filter((_, index) => index >= secondGroupIndex), [categoryCases]);
 
-  console.log('rerender');
-
   return (
     <div ref={ref} id='cases' className='flex flex-col gap-[50px] max-md:gap-5'>
       <Block className='flex h-[720px] flex-col items-center justify-center gap-6 max-md:h-[370px]'>
@@ -91,7 +89,7 @@ export default function Cases() {
               { 'grid-cols-3 *:last:row-span-2': secondGridCases.length !== 2 },
             )}
           >
-            {secondGridCases.map(([key, { config, localization }], index) => (
+            {secondGridCases.map(([key, { config, localization }]) => (
               <CaseCard key={key} link={key} localization={localization} {...config} />
             ))}
           </div>

@@ -35,3 +35,31 @@ button {
 *::-webkit-scrollbar-thumb {
   background: #FFF;
 }
+
+/* View transitions for case panel */
+::view-transition-old(case-panel) {
+  animation: case-panel-out 0.7s ease-in-out both;
+}
+
+::view-transition-new(case-panel) {
+  animation: case-panel-in 0.7s ease-in-out both;
+}
+
+@keyframes case-panel-out {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes case-panel-in {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+/* Keep home page static during case transitions */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}

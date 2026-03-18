@@ -14,7 +14,6 @@ type ModelProps = {
 
 const Eyes = memo(({ eyes }: { eyes: Object3D[] }) => {
   const { viewport } = useThree();
-  const { isDesktop } = useDevice();
   const mousePos = useRef({ x: 0, y: 0 });
 
   const maxOffset = 0.1;
@@ -65,6 +64,7 @@ export const Model = memo(({ fbx, onReady }: ModelProps) => {
   }, [eyes]);
 
   const onMouseMove = (event: MouseEvent) => {
+    if (pathname !== '/') return;
     const mouseX = event.clientX - window.innerWidth / 2;
     const mouseY = event.clientY - (window.innerHeight - 500) / 2;
     rotateX.set(mouseX * 0.0005);
@@ -72,14 +72,15 @@ export const Model = memo(({ fbx, onReady }: ModelProps) => {
   };
 
   useEffect(() => {
-    if (isMobile || isTablet || pathname !== '/') return;
+    if (isMobile || isTablet) return;
     document.addEventListener('mousemove', onMouseMove);
     return () => document.removeEventListener('mousemove', onMouseMove);
-  }, [pathname]);
+  }, []);
 
   useEffect(() => {
     if (fbx) {
       onReady();
+      if (pathname !== '/') return;
       const eyesArray: Object3D[] = [];
       fbx.traverse((child) => {
         if (child.name.match(/eye/gi)) {
@@ -91,7 +92,7 @@ export const Model = memo(({ fbx, onReady }: ModelProps) => {
       });
       setEyes(eyesArray);
     }
-  }, [fbx]);
+  }, [fbx, pathname]);
 
   const meshScale = viewport.width / (isMobile ? 8 : isTablet ? viewport.left / 1.3 : 8.5);
   const meshPosY = isMobile ? 0.3 : 0.6;
@@ -123,7 +124,7 @@ const Package = () => {
       style={{ height: isDesktop ? '90%' : '50%' }}
     >
       <Canvas resize={{ scroll: false }}>
-        <ambientLight intensity={5} color='#FFFFFF' />
+        <ambientLight intensity={4.5} color='#FFFFFF' />
         {pathname === '/' && <Model fbx={fbx} onReady={() => setIsModelReady(true)} />}
       </Canvas>
     </motion.div>

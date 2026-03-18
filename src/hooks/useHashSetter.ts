@@ -8,15 +8,16 @@ type UseHashSetter = {
 
 export const useHashSetter = ({ hash }: UseHashSetter) => {
   const setCurrentBlock = useSystemStore((state) => state.setCurrentHash);
+  const scrollJumping = useSystemStore((state) => state.scrollJumping);
   const { ref, inView } = useInView({
     threshold: 0.2,
   });
 
   useEffect(() => {
-    if (!inView) return;
+    if (!inView || scrollJumping) return;
     // location.hash = hash;
     setCurrentBlock(hash);
-  }, [inView]);
+  }, [inView, scrollJumping]);
 
   return { ref };
 };

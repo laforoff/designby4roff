@@ -16,6 +16,7 @@ type CaseCardProps = HTMLMotionProps<'div'> &
     localization: Localization;
     scheme?: CaseOptions['scheme'];
     link: string;
+    inCase?: boolean;
   };
 
 export default function CaseCard({
@@ -30,12 +31,12 @@ export default function CaseCard({
   link,
   logo,
   gap,
+  inCase = false,
   ...props
 }: CaseCardProps) {
   const { L } = useLocalization(localization);
   const [isHovered, setIsHovered] = useState(false);
   const { isDesktop } = useDevice();
-  const setCaseOptions = useCasesStore((state) => state.setCaseOptions);
   const { L: GL } = useLocalization(GLOBAL_LOCALIZATION);
   const navigate = useNavigate();
 
@@ -50,26 +51,23 @@ export default function CaseCard({
     },
   };
 
+  const setIsTransitioning = useCasesStore((state) => state.setIsTransitioning);
+
   const onOpenCase = async () => {
-    setCaseOptions({
-      background: background ?? 'black',
-      scheme: scheme ?? 'dark',
-      borderColor: borderColor,
-      logo: logo ?? '/cases/exampleLogo.png',
-      gap: gap ?? 64,
-    });
+    setIsTransitioning(true);
+    setTimeout(() => setIsTransitioning(false), 800);
   };
 
   return (
     <div
       className={cn(
-        'relative flex overflow-hidden rounded-[40px] border border-white/15 max-md:flex-col max-md:rounded-4xl',
+        'relative flex w-full overflow-hidden rounded-[40px] border border-white/15 max-md:flex-col max-md:rounded-4xl',
         className,
         {
-          'border-black/15': scheme === 'light',
+          'border-black/15': scheme === 'light' && inCase,
         },
       )}
-      onClick={() => navigate({ to: link, from: '/' })}
+      onClick={() => navigate({ to: link, from: '/', viewTransition: true })}
       onMouseDown={(e) => {
         e.preventDefault();
         if (e.button !== 1) return;
@@ -100,18 +98,32 @@ export default function CaseCard({
         <motion.div
           initial={false}
           className={cn(
-            `flex w-full flex-col gap-7 p-[50px] max-md:gap-4 max-md:bg-[#141414]/0 max-md:p-8 md:pointer-events-none md:absolute
-            md:bottom-0`,
+            'absolute bottom-0 flex w-full flex-col gap-7 p-[50px] max-md:gap-4 max-md:bg-[#141414] max-md:p-8 md:pointer-events-none',
+            {
+              'max-md:bg-white': scheme === 'light' && inCase,
+            },
           )}
           variants={cardTextVariants}
           animate={isHovered || !isDesktop ? 'hovered' : 'default'}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
           <div className='flex flex-col max-md:gap-2.5'>
-            <h1 className='text-[40px] font-bold text-white max-md:text-2xl'>{L.caseTitle as string}</h1>
+            <h1
+              className={cn('text-[40px] font-bold text-white max-md:text-2xl', {
+                'max-md:text-black': scheme === 'light' && inCase,
+              })}
+            >
+              {L.caseTitle as string}
+            </h1>
             <DateRange startDate={startDate} endDate={endDate} />
           </div>
-          <p className={cn('text-xl text-white/65 max-md:text-base', {})}>{L.caseShortDescription as string}</p>
+          <p
+            className={cn('text-xl text-white/65 max-md:text-base', {
+              'max-md:text-black/65': scheme === 'light' && inCase,
+            })}
+          >
+            {L.caseShortDescription as string}
+          </p>
         </motion.div>
       </motion.div>
     </div>

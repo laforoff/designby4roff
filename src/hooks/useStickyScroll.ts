@@ -5,32 +5,33 @@ import { useEffect } from 'react';
 export const useStickyScroll = () => {
   const currentHash = useSystemStore((state) => state.currentHash);
   const setCurrentHash = useSystemStore((state) => state.setCurrentHash);
+  const setScrollJumping = useSystemStore((state) => state.setScrollJumping);
   const lenis = useLenis();
 
   const scrollToBlock = (blockId: string) => {
     const element = document.querySelector(`#${blockId}`) as HTMLDivElement;
-    lenis?.scrollTo(element, { offset: -30 });
+    lenis?.scrollTo(element, {
+      offset: -30,
+      onComplete: () => setScrollJumping(false),
+    });
     setCurrentHash(blockId);
   };
 
+  // Скролл при первой загрузке / рефреше страницы
+  // Зависимость от lenis: запустится когда Lenis инициализируется, гарантируя отсутствие конфликтов
+  // scrollJumping=true блокирует useHashSetter от перезаписи currentHash во время прокрутки
   useEffect(() => {
-    const onContentLoaded = () => {
-      if (!currentHash) return;
-      const targetFromHash = document.querySelector<HTMLElement>(`#${currentHash}`);
-      if (!targetFromHash) return;
-      const elementPosition = targetFromHash.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - 30;
+    if (!lenis || !currentHash) return;
+    const target = document.querySelector<HTMLElement>(`#${currentHash}`);
+    if (!target) return;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'instant',
-      });
-    };
-
-    onContentLoaded();
-
-    return () => {};
-  }, []);
+    setScrollJumping(true);
+    lenis.scrollTo(target, {
+      offset: -30,
+      immediate: true,
+      onComplete: () => setScrollJumping(false),
+    });
+  }, [lenis]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return { currentHash, scrollToBlock };
 };

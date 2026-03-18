@@ -4,6 +4,7 @@ import { useStickyScroll } from '@/hooks/useStickyScroll';
 import { useSystemStore } from '@/stores/system';
 import { getObjectKeys } from '@/utils/getObjectKeys';
 import { useLocation } from '@tanstack/react-router';
+import { useEffect } from 'react';
 import Button from '../Button';
 import { Tabs, TabsContent, TabsTab } from '../Tabs';
 
@@ -13,6 +14,7 @@ type Tabs = Record<TabName, string>;
 export default function Menu() {
   const { currentHash, scrollToBlock } = useStickyScroll();
   const setClientLang = useSystemStore((state) => state.setLanguage);
+  const setScrollJumping = useSystemStore((state) => state.setScrollJumping);
   const clientLang = useSystemStore((state) => state.language);
   const { L: GL } = useLocalization(GLOBAL_LOCALIZATION);
   const { pathname } = useLocation();
@@ -24,10 +26,12 @@ export default function Menu() {
   };
   const tabsKeys = getObjectKeys(TABS);
 
-  const toggleLanguage = () => {
-    const newLang = clientLang === 'en' ? 'ru' : 'en';
-    setClientLang(newLang);
+  const jumpToBlock = (block: string) => {
+    setScrollJumping(true);
+    scrollToBlock(block);
   };
+
+  useEffect(() => setScrollJumping(false), [pathname]);
 
   return (
     <Tabs
@@ -43,14 +47,14 @@ export default function Menu() {
           iconLeft='logo'
           className='z-10 size-[60px] bg-[#0a0a0a]/30 p-[18px] mix-blend-difference data-[active="true"]:bg-black/30
             data-[active="true"]:text-white'
-          onClick={() => scrollToBlock('main')}
+          onClick={() => jumpToBlock('main')}
           animation={false}
         />
         <div className='flex w-full items-center rounded-[64px] border border-[#ffffff28] bg-[#0a0a0a]/30'>
           <TabsContent customId='menu' className='w-full min-w-[42px] shrink'>
             {tabsKeys.map((tab, index) => {
               return (
-                <TabsTab key={index} active={currentHash === tab} onClick={() => scrollToBlock(tab)}>
+                <TabsTab key={index} active={currentHash === tab} onClick={() => jumpToBlock(tab)}>
                   {TABS[tab]}
                 </TabsTab>
               );
@@ -61,7 +65,7 @@ export default function Menu() {
           iconLeft={clientLang === 'ru' ? 'ru' : 'en'}
           className='size-[60px] bg-[#0a0a0a]/30 p-[18px]'
           iconSize='25px'
-          onClick={toggleLanguage}
+          onClick={() => setClientLang(clientLang === 'en' ? 'ru' : 'en')}
           animation={false}
         />
       </TabsContent>

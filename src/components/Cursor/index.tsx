@@ -29,8 +29,8 @@ export default function Cursor() {
       opacity: 0,
     },
     scale: {
-      width: 10 * Number(cursorOptions.scale),
-      height: 10 * Number(cursorOptions.scale),
+      width: 10 * (cursorOptions.scale ?? 1),
+      height: 10 * (cursorOptions.scale ?? 1),
     },
   };
 
@@ -47,14 +47,14 @@ export default function Cursor() {
     ? 'hide'
     : cursorOptions.expanded
       ? 'withText'
-      : cursorOptions.scale !== 1
+      : (cursorOptions.scale ?? 1) !== 1
         ? 'scale'
         : 'default';
 
   if (!isDesktop) return;
 
   return (
-    <div className='pointer-events-none fixed inset-0 z-20 overflow-hidden mix-blend-difference'>
+    <div className='pointer-events-none fixed inset-0 z-[110] overflow-hidden mix-blend-difference'>
       <motion.div
         ref={ref}
         animate={currentCursorVariant}
