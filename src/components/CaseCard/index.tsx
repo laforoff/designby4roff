@@ -115,7 +115,11 @@ export default function CaseCard({
             >
               {L.caseTitle as string}
             </h1>
-            <DateRange startDate={startDate} endDate={endDate} />
+            <DateRange
+              startDate={startDate}
+              endDate={endDate}
+              className={cn({ 'text-black/65': scheme === 'light' && inCase })}
+            />
           </div>
           <p
             className={cn('text-xl text-white/65 max-md:text-base', {

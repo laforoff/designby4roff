@@ -17,6 +17,8 @@ export default function DateRange({ startDate, endDate, className }: DateRange) 
   const formatedEndDate = endDate !== 'now' ? formatDate(endDate) : GL.now;
 
   return (
-    <p className={cn('text-sm text-white/35 uppercase', className)}>{`${formatedStartDate} - ${formatedEndDate}`}</p>
+    <p
+      className={cn('text-sm text-white/35 uppercase', {}, className)}
+    >{`${formatedStartDate} - ${formatedEndDate}`}</p>
   );
 }
