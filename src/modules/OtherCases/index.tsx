@@ -11,8 +11,6 @@ export default function OtherCases() {
     .filter(([key]) => key.includes(`/cases/${selectedCategory}/`) && key !== currentCaseKey)
     .slice(0, 2);
 
-  console.log(caseOption.background);
-
   return (
     <div className='mt-8 flex flex-col gap-14'>
       <h1 className='px-2.5 text-center text-[32px] font-extrabold'>ДРУГИЕ РАБОТЫ</h1>

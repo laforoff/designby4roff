@@ -36,7 +36,7 @@ export default function CaseCard({
 }: CaseCardProps) {
   const { L } = useLocalization(localization);
   const [isHovered, setIsHovered] = useState(false);
-  const { isDesktop } = useDevice();
+  const { isDesktop, isMobile, isTablet } = useDevice();
   const { L: GL } = useLocalization(GLOBAL_LOCALIZATION);
   const navigate = useNavigate();
 
@@ -57,6 +57,8 @@ export default function CaseCard({
     setIsTransitioning(true);
     setTimeout(() => setIsTransitioning(false), 800);
   };
+
+  console.log(isDesktop, isTablet, isMobile);
 
   return (
     <div
@@ -93,6 +95,7 @@ export default function CaseCard({
           }}
           src={`/cases/${image}`}
           maxWidth='100%'
+          minHeight={isDesktop ? '37vh' : ''}
         />
         <motion.div
           initial={false}
@@ -104,7 +107,7 @@ export default function CaseCard({
             },
           )}
           variants={cardTextVariants}
-          animate={isHovered || !isDesktop ? 'hovered' : 'default'}
+          animate={isDesktop ? (isHovered ? 'hovered' : 'default') : 'hovered'}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
           <div className='flex flex-col max-md:gap-2.5'>
@@ -118,7 +121,7 @@ export default function CaseCard({
             <DateRange
               startDate={startDate}
               endDate={endDate}
-              className={cn({ 'text-black/65': scheme === 'light' && inCase })}
+              className={cn({ 'max-md:text-black/65': scheme === 'light' && inCase })}
             />
           </div>
           <p
